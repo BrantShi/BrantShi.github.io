@@ -1,11 +1,11 @@
 # Site
 title: 'Brant'
 bio: "Brant Shi's Awesome Blog."
-description: "This is Brant Shi's Blog."
+description: "石纪 Brant Shi的个人博客."
 reading_time: true
 words_per_minute: 200
-logo: 'assets/img/logo.png'
-background: 'assets/img/placeholder-big.jpg'
+logo: 'assets/img/avatar.png'
+background: 'assets/img/placeholder-big.png'
 tiled_bg: false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale: en_US
 url: "https://brantshi.github.io"
@@ -37,7 +37,7 @@ disqus_shortname: taylantatli
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
+email: BrantShi@aliyun.com
 #twitter: username
 #facebook: username
 github-url: BrantShi
@@ -50,7 +50,7 @@ github-url: BrantShi
 #medium:            '@username'
 #pinterest:         username
 #foursquare:        username
-steam: DogSlaughter1
+#steam: DogSlaughter1
 #dribbble:          username
 #youtube:           username
 #youtube-channel:   channel
