@@ -2,7 +2,7 @@
 layout: post
 title: "基于MRTK的HoloLens开发（1）"
 date: 2019-08-24
-excerpt: "A ton of text to test readability."
+excerpt: "使用MixedRealityToolKit进行HoloLens的应用开发"
 tags: [unity, MRTK, Hololens]
 comments: true
 ---
