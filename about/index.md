@@ -9,7 +9,7 @@ comments: false
 ---
 
 <figure>
-	<img src="http://brantshi.github.io/assets/img/avatar.png">
+	<img src="http://brantshi.github.io/assets/img/avatar.jpg">
 	<figcaption>Brant Shi-石纪</figcaption>
 </figure>
 
