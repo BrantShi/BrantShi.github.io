@@ -8,7 +8,10 @@ comments: true
 ---
 * TOC
 {:toc}
-
+<figure>
+	<img src="http://brantshi.github.io/assets/img/post_img/photo01.jpg">
+	<figcaption>MR眼镜Hololens——将科幻变成现实</figcaption>
+</figure>
 
 #  Hololens开发
 
