@@ -1,4 +1,13 @@
-﻿@[TOC](基于MRTK的HoloLens开发（1）)
+﻿---
+layout: post
+title: "基于MRTK的HoloLens开发（1）"
+date: 2019-08-24
+excerpt: "A ton of text to test readability."
+tags: [unity, MRTK, Hololens]
+comments: true
+---
+*TOC
+{:toc}
 
 #  Hololens开发
 
