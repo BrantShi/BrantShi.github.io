@@ -9,8 +9,8 @@ comments: false
 ---
 
 <figure>
-	<img src="http://brantshi.github.io/assets/img/avatar.jpg">
-	<figcaption>Brant Shi-石纪.</figcaption>
+	<img src="http://brantshi.github.io/assets/img/avatar.png">
+	<figcaption>Brant Shi-石纪</figcaption>
 </figure>
 
 我叫石纪，目前就读于湖南大学本科 计算机科学与技术专业
