@@ -4,8 +4,8 @@ bio: "Brant Shi's Awesome Blog."
 description: "石纪 Brant Shi的个人博客."
 reading_time: true
 words_per_minute: 200
-logo: 'assets/img/avatar.png'
-background: 'assets/img/placeholder-big.png'
+logo: 'assets/img/avatar.jpg'
+background: 'assets/img/placeholder-big.jpg'
 tiled_bg: false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale: en_US
 url: "https://brantshi.github.io"
