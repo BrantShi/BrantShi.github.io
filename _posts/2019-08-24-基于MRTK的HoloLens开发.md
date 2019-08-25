@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "基于MRTK的HoloLens开发（1）"
+title: "菜鸟快速入手Hololens开发"
 date: 2019-08-24
 excerpt: "使用MixedRealityToolKit进行HoloLens的应用开发"
 tags: [unity, MRTK, Hololens]
@@ -8,15 +8,21 @@ comments: true
 ---
 * TOC
 {:toc}
+
+
+#  序言
+
 <figure>
-	<img src="http://brantshi.github.io/assets/img/post_img/photo01.jpg">
-	<figcaption>MR眼镜Hololens——将科幻变成现实</figcaption>
+	<img src="http://brantshi.github.io/assets/img/post_img/001.jpg">
+	<figcaption>酷炫黑科技——混合现实眼镜Hololens</figcaption>
 </figure>
 
-#  Hololens开发
-
 笔者的团队近日有幸入手一台Hololens真机，进行某知名公司一建筑模型借助Hololens的动态展示的开发。开发过程中因国内进行相关开发的团队过少，且微软官方已将原HoloToolKit改版为MixedRealityToolKit也即MRTK，能搜到的有关Hololens开发的博客很少，且大都缺乏时效性，对现今开发Hololens的团队来说指导作用不大；而官方文档又只有英文版且对入门者不太友好，总之开发过程中困难重重。
-因而决定写这篇文章，为==拥有Hololens真机，使用最新版本MRTK==进行Hololens项目开发人员提供帮助。
+
+因而决定写这篇文章，为==拥有Hololens真机，使用最新版本MRTK==进行Hololens项目开发人员在初步入门时提供帮助。
+
+- PS：由于MRTK已相当完备，即使从未接触过Unity的菜鸟也能很轻易地快速上手。
+
 #  环境配置
 以下均为笔者所用配置环境
 名称     | 环境
@@ -24,23 +30,25 @@ comments: true
 操作系统  | Windows 10 1809【至少1703+】
 Visual Studio  | Visual Studio Community 2019
 Unity  | Unity 2018.4.6f1【至少2018.4】
+
 ## Visual Studio具体配置
 Visual Studio的配置是否正确决定了项目能否成功从Unity中构建导出，进而设计能否在Hololens生成APP及调试。下图为笔者经多次尝试后确认的正确配置所需选择的。
 ![VS具体配置1](https://img-blog.csdnimg.cn/20190823182200401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
 ![VS具体配置2](https://img-blog.csdnimg.cn/2019082318224664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
 ![VS具体配置3](https://img-blog.csdnimg.cn/20190823182429271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
 ![VS具体配置4](https://img-blog.csdnimg.cn/20190823182500836.png)
+
 ##  MRTK 工具包配置
 在进行Hololens的开发时，我们需要集成微软官方提供的 MixedRealityToolKit 项目。MixedRealityToolKit ，即原HoloToolkit-Unity 项目，简称MRTK，是微软官方的开源项目，用于帮助开发者快速开发 HoloLens 应用，能够快速为项目集成基本输入、空间映射和场景匹配等特性。
 
 关于该项目的详细介绍，可以参考MRTK官方说明文档https://microsoft.github.io/MixedRealityToolkit-Unity/README.html
 
 集成步骤
-
  - 在Github上下载MRTK项目代码 https://github.com/microsoft/MixedRealityToolkit-Unity
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190823183744585.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
  - 将下载的ZIP解压，使用Unity以打开工程的方式打开解压得到的文件夹，右击Assets，选择Export Package，将所有MRTK前缀的包全部选上，导出得到一unitypackage格式的文件，即是后续在Unity项目中可直接导入的MRTK工具包。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190823192416100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
+
 ## Unity配置
 Unity 3D是进行Hololens开发的主要平台，下面进入正题。
 配置步骤：
@@ -55,9 +63,29 @@ Unity 3D是进行Hololens开发的主要平台，下面进入正题。
  - 截至此步基本配置已完成，可通过Holographic Remoting Player与设备连接，点击开始即快捷地调试已有项目。注意Holographic Remoting Player是在Hololens上安装，电脑端通过Window-XR-Holographic Emulation途径打开下面的界面，Emulation Mode 选择Remote to Device，在Hololens上打开Holographic Remoting Player后即可获取Hololens的ip地址，输入到Remote Machine中即可。
 详细使用方法见：https://docs.microsoft.com/zh-cn/windows/mixed-reality/holographic-remoting-player
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190823205828382.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
-##  补充
+
+# 快速上手开发
+
+## MRTK使用
+MRTK是一个封装完好，功能非常完备的工具包，配置成功后即可快速入手使用，此处仅介绍一些实用的小技巧。
+
+首先需要注意的是，在添加配置到当前场景中后，此场景即可支持所有MixedReality中的功能如手势识别，空间感知，眼部追踪等等，也自动地初始化好了光标和MR Camera
+，因而**HoloLens项目开发的实质是更改展示对象的属性**，比如笔者团队将fbx形式的3D办公楼模型转换为可以在HoloLens中动态搭建，拖拽，旋转，放大缩小等功能的展示对象，除动态搭建为自行编写的脚本外，其余功能均是给展示对象即Game Object添加MRTK中已给出的脚本组件，再进行一些功能上的修改罢了。
+<figure>
+	<img src="http://brantshi.github.io/assets/img/post_img/005.jpg">
+	<figcaption>笔者项目所建模型</figcaption>
+</figure>
+
+## Tips
+
+在完成上文配置后，当前Unity左下角的Asset中会出现众多MixedRealityToolKit工具包，其中的MixedRealityToolKit.EXamples中存放有众多微软官方给出，关于MixedReality众多功能具体实现的Demo。
+<img src="http://brantshi.github.io/assets/img/post_img/002.png">
+如果想要实现某项功能，可打开对应的scene，在HoloLens上运行测试，找到拥有想要实现的功能的对象，在右侧的inspectors中可看到该对象所用到的所有脚本组件，将其中与MRTK相关的如Manipulation Handler,Near Interation Grabbable等添加到自己创建的对象上，即可赋予该对象相同的属性。
+<img src="http://brantshi.github.io/assets/img/post_img/004.png">
+<img src="http://brantshi.github.io/assets/img/post_img/003.png">
+#  补充
  - 强烈推荐在Windows Store（Windows自带）上下载Microsoft HoloLens，可实时获取设备第一视角的直播，及进行实时照相，录屏等功能，方便团队开发。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190823211522910.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190823211834466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JyYW50X1N0YXJr,size_16,color_FFFFFF,t_70)
 
-
+以上，本文章中如有任何技术问题，请联系笔者进行修改，
